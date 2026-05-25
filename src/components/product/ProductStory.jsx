@@ -1,26 +1,43 @@
 import React from 'react';
 
-const ProductStory = ({ isMobile }) => {
+const ProductStory = () => {
   return (
-    <div className="pd-story" style={isMobile ? { backgroundColor: 'transparent', border: 'none', color: '#fff', flexDirection: 'column' } : {}}>
-      <div className="pd-story-text" style={isMobile ? { padding: '0' } : {}}>
-        <div className="pd-story-subtitle" style={isMobile ? { color: '#fff', fontSize: '14px', letterSpacing: '1px', marginBottom: '20px' } : {}}>THE STORY</div>
-        {isMobile && <div className="pd-story-jap" style={{ color: '#cc0000', marginBottom: '15px' }}>反逆者のために作られた</div>}
+    <div style={{ backgroundColor: '#000', color: '#fff', width: '100%', margin: '60px 0' }}>
+      <div className="pd-container" style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', minHeight: '350px' }}>
         
-        {!isMobile && <h2 className="pd-story-title">INSPIRED BY TOKYO STREET CULTURE.</h2>}
-        {!isMobile && <p className="pd-story-p">ROOTED IN TRADITION. MADE FOR REBELS.</p>}
+        {/* Left Text */}
+        <div style={{ flex: 1, padding: '40px 20px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '20px' }}>
+            <div style={{ border: '1px solid #cc0000', color: '#cc0000', padding: '10px 20px', fontSize: '32px', fontWeight: 'bold' }}>竜</div>
+            <div>
+              <h2 style={{ fontSize: '20px', fontWeight: '900', letterSpacing: '1px', textTransform: 'uppercase', margin: 0 }}>DESIGN STORY</h2>
+              <div style={{ color: '#cc0000', fontSize: '10px', marginTop: '5px' }}>DRAGON</div>
+            </div>
+          </div>
+          <p style={{ color: '#ccc', fontSize: '12px', lineHeight: '1.8', maxWidth: '350px', marginLeft: '85px' }}>
+            Inspired by ancient Japanese folklore, the dragon<br/>
+            symbolizes power, protection, and transformation.<br/><br/>
+            A timeless piece for those who lead with<br/>
+            courage and ambition.
+          </p>
+        </div>
         
-        <p className="pd-story-p" style={{ color: isMobile ? '#888' : '#555', fontSize: '11px', lineHeight: '1.6' }}>
-          {isMobile ? 
-            <>Rooted in tradition. Made for rebels.<br/><br/>The dragon symbolizes power, resilience and transformation.</> 
-            : 
-            "Dragon Rebirth symbolizes power, resilience, and transformation. A design born in the underground streets of Tokyo."
-          }
-        </p>
-        {!isMobile && <div className="pd-story-jap">反逆者のために作られた</div>}
+        {/* Right Images (using background image or absolute positioning to mimic the graphic) */}
+        <div style={{ flex: 1, position: 'relative', height: '350px', overflow: 'hidden', display: 'flex' }}>
+          {/* We will just use an image for the right side for simplicity if the asset exists, otherwise we build it */}
+          <img src="/images/samurai.jpg" style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'brightness(0.6)' }} />
+          <div style={{ position: 'absolute', right: '40px', top: '50%', transform: 'translateY(-50%)', writingMode: 'vertical-rl', fontSize: '24px', fontWeight: 'bold', color: '#fff', letterSpacing: '5px' }}>
+            東京バイブス
+          </div>
+          <div style={{ position: 'absolute', right: '120px', top: '50%', transform: 'translateY(-50%)', writingMode: 'vertical-rl', fontSize: '30px', fontWeight: '900', color: 'transparent', WebkitTextStroke: '1px #555', letterSpacing: '10px' }}>
+            STREET CULTURE
+          </div>
+          <div style={{ position: 'absolute', right: '20px', bottom: '20px', width: '80px', height: '80px', border: '1px solid #cc0000', borderRadius: '50%', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#cc0000', fontSize: '32px' }}>
+            魔
+          </div>
+        </div>
+
       </div>
-      {/* On mobile, we might not render the image as it relies on the gallery, or we keep it. The screenshot doesn't show an image in "The Story" section, it goes straight to GALLERY. */}
-      {!isMobile && <img src="/images/sc_geisha.png" alt="Story" className="pd-story-img" />}
     </div>
   );
 };

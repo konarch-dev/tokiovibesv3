@@ -1,7 +1,7 @@
 /* ================= PRODUCT DETAIL PAGE ================= */
 
 .product-detail-page {
-  background-color: #F4F3ED; /* Sand/off-white background */
+  background-color: #FFFFFF;
   color: #000;
   padding-bottom: 80px;
 }
@@ -16,9 +16,8 @@
   font-size: 10px;
   font-weight: bold;
   letter-spacing: 1px;
-  padding: 20px 0 10px 0;
+  padding: 20px 0;
   color: #555;
-  text-transform: uppercase;
 }
 
 /* SECTION TITLES */
@@ -191,10 +190,13 @@
   font-weight: bold;
   cursor: pointer;
   transition: all 0.2s;
+  background-color: #fff;
+  color: #000;
 }
 .pd-size-btn.active {
-  border-color: #970C0F;
-  color: #970C0F;
+  background-color: #000;
+  color: #fff;
+  border-color: #000;
 }
 
 .pd-placement-btns {
@@ -508,6 +510,32 @@
   font-weight: bold;
 }
 
+.pd-qty-val {
+  color: #000;
+}
+.pd-qty-btn {
+  color: #000;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.pd-add-to-cart {
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.pd-buy-now {
+  background-color: #f9f9f9;
+  color: #000;
+  border: 1px solid #eee;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.pd-add-to-cart:hover, .pd-buy-now:hover {
+  opacity: 0.8;
+}
+
 /* ================= REAL VIBES ================= */
 .pd-real-vibes-horizontal {
   display: flex;
@@ -577,6 +605,126 @@
   cursor: pointer;
 }
 
+/* ================= NEW HOW TO CLASSES ================= */
+.pd-how-section {
+  display: flex;
+  gap: 40px;
+  margin-top: 60px;
+  flex-wrap: wrap;
+}
+.pd-why-love-it {
+  flex: 1;
+  min-width: 250px;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+}
+.pd-why-image {
+  flex: 0.8;
+  position: relative;
+}
+.pd-why-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.pd-why-content {
+  flex: 1.2;
+  padding: 30px;
+}
+.pd-why-title {
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+  line-height: 1.4;
+}
+.pd-why-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.pd-why-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  color: #ccc;
+}
+
+.pd-how-to-apply {
+  flex: 1.5;
+  min-width: 300px;
+}
+.pd-how-title {
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+.pd-how-title-line {
+  width: 50px;
+  height: 2px;
+  background-color: #000;
+  margin-bottom: 30px;
+}
+.pd-how-steps {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.pd-how-step-item {
+  flex: 1;
+  position: relative;
+  text-align: center;
+}
+.pd-step-num {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #eee;
+  color: #000;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  font-weight: bold;
+}
+.pd-step-icon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+  height: 60px;
+  align-items: flex-end;
+}
+.pd-step-title {
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.pd-step-desc {
+  font-size: 10px;
+  color: #666;
+  line-height: 1.4;
+}
+.pd-pro-tip {
+  background-color: #f9f9f9;
+  border: 1px solid #eee;
+  padding: 15px;
+  font-size: 11px;
+  color: #555;
+  border-radius: 4px;
+  text-align: center;
+}
+
 /* ================= RESPONSIVE ================= */
 .pd-mobile-only {
   display: none;
@@ -598,38 +746,192 @@
   .pd-mobile-hide {
     display: none !important;
   }
-  .pd-hero { flex-direction: column; }
-  .pd-hero-left { flex-direction: column; }
-  .pd-gallery-container { flex-direction: row; gap: 10px; }
-  .pd-gallery-thumbs { flex-direction: row; width: 100%; justify-content: flex-start; overflow-x: auto; }
-  .pd-thumb-chevron { display: none; }
-  .pd-hero-features { flex-wrap: wrap; justify-content: space-between; gap: 15px; }
-  .pd-placement-btns { flex-wrap: wrap; }
-  .pd-place-btn { flex: 1 0 30%; }
-  .pd-try-on-content { flex-direction: column; }
-  .pd-split-section { flex-direction: column; height: auto; }
-  .pd-story { flex-direction: column; }
-  .pd-story-img { height: 200px; }
-  .pd-vibes-right { grid-template-columns: repeat(2, 1fr); }
   
-  .pd-action-btns {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 10px;
+  /* Dark Theme Overrides */
+  .product-detail-page {
+    background-color: #0a0a0a;
+    color: #fff;
   }
-  .pd-add-to-cart, .pd-buy-now {
-    flex: 1 1 45%;
-    min-width: 120px;
-    font-size: 13px;
-    padding: 12px 5px;
-    justify-content: center;
+  .pd-breadcrumbs {
+    color: #888;
   }
-  .pd-add-to-cart svg {
-    width: 16px;
-    height: 16px;
+  .pd-breadcrumbs span:last-child {
+    color: #fff !important;
+  }
+  .pd-section-title {
+    color: #fff;
+  }
+  .pd-subtitle {
+    color: #aaa;
+  }
+  .pd-hero { 
+    border-bottom: none; 
+    padding-bottom: 20px;
+    flex-direction: column;
+  }
+  
+  /* Layout: Left vertical thumbnails overlaying/next to main image */
+  .pd-hero-left { 
+    flex-direction: row; 
+    gap: 15px; 
+    align-items: flex-start;
+  }
+  .pd-gallery-container {
+    flex-direction: column; 
+    gap: 10px; 
+    width: 60px;
+  }
+  .pd-gallery-thumbs {
+    flex-direction: column; 
+    width: 100%; 
+    overflow-y: auto; 
+    overflow-x: hidden;
+  }
+  .pd-main-img-container {
+    flex: 1;
+  }
+  .pd-thumb {
+    width: 100%;
+    height: 80px;
+    border: 1px solid #333;
+  }
+  .pd-thumb.active {
+    border-color: #cc0000;
+  }
+  .pd-thumb-chevron { display: none; }
+  
+  /* Size & QTY */
+  .pd-options-header {
+    color: #fff;
   }
   .pd-size-btn {
-    padding: 10px 0 !important;
+    padding: 10px !important;
+    font-size: 12px;
+    color: #fff;
+    background-color: transparent;
+    border-color: #333;
+    flex: 1;
+  }
+  .pd-size-btn.active {
+    background-color: transparent;
+    border-color: #cc0000;
+    color: #fff;
+  }
+  .pd-qty-selector {
+    border-color: #333;
+  }
+  .pd-qty-btn {
+    color: #fff;
+  }
+  .pd-qty-val {
+    color: #fff;
+  }
+  
+  /* Buttons */
+  .pd-buy-now {
+    background-color: #fff;
+    color: #000;
+    border-color: #fff;
+  }
+  .pd-add-to-cart {
+    background-color: #ff2a2a; /* Brighter red on dark theme */
+  }
+  
+  /* Accordion Component */
+  .pd-accordion {
+    border-bottom: 1px solid #222;
+  }
+  .pd-accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
     font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .pd-accordion-content {
+    padding-bottom: 20px;
+    font-size: 12px;
+    line-height: 1.6;
+    color: #bbb;
+  }
+  
+  /* How To Apply Section Mobile */
+  .pd-how-section {
+    flex-direction: column-reverse;
+    gap: 30px;
+    margin-top: 30px;
+  }
+  .pd-why-love-it {
+    flex-direction: column;
+    padding: 0;
+    border: 1px solid #222;
+    background-color: #111;
+  }
+  .pd-why-content {
+    padding: 20px;
+  }
+  .pd-why-title {
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  .pd-why-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .pd-why-item {
+    flex-direction: column;
+    text-align: center;
+    flex: 1 1 30%;
+    gap: 5px;
+    font-size: 9px;
+  }
+  .pd-why-item svg {
+    margin-bottom: 5px;
+  }
+  
+  .pd-how-title {
+    color: #fff;
+    font-size: 14px;
+  }
+  .pd-how-title-line {
+    background-color: #cc0000;
+  }
+  .pd-how-steps {
+    gap: 10px;
+  }
+  .pd-step-icon {
+    height: 40px;
+    color: #fff;
+  }
+  .pd-step-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+  .pd-step-title {
+    color: #fff;
+    font-size: 10px;
+  }
+  .pd-step-desc {
+    font-size: 8px;
+    color: #aaa;
+  }
+  .pd-step-num {
+    width: 16px;
+    height: 16px;
+    font-size: 8px;
+    background-color: #333;
+    color: #fff;
+  }
+  .pd-pro-tip {
+    background-color: #111;
+    border-color: #222;
+    color: #bbb;
+  }
+  .pd-pro-tip strong {
+    color: #fff;
   }
 }

@@ -2,15 +2,10 @@ import React, { useEffect } from 'react';
 import '../product.css';
 import ProductHero from '../components/product/ProductHero';
 import ProductHowTo from '../components/product/ProductHowTo';
-import ProductTabs from '../components/product/ProductTabs';
 import ProductRealVibes from '../components/product/ProductRealVibes';
 import ProductRelated from '../components/product/ProductRelated';
-import ProductReviews from '../components/product/ProductReviews';
-
 import ProductStory from '../components/product/ProductStory';
-import ProductTryItOn from '../components/product/ProductTryItOn';
-import MobileStickyNav from '../components/product/MobileStickyNav';
-import FrequentlyBoughtTogether from '../components/product/FrequentlyBoughtTogether';
+import ProductAccordions from '../components/product/ProductAccordions';
 
 const ProductDetail = () => {
   useEffect(() => {
@@ -18,85 +13,64 @@ const ProductDetail = () => {
   }, []);
 
   return (
-    <main className="product-detail-page" style={{ backgroundColor: '#000', color: '#fff' }}>
+    <main className="product-detail-page">
       <div className="pd-container">
-        <div className="pd-breadcrumbs" style={{ color: '#ccc', display: 'flex', alignItems: 'center', gap: '10px' }}>
-          <span>HOME</span>
+        <div className="pd-breadcrumbs" style={{ display: 'flex', alignItems: 'center', gap: '8px', paddingTop: '30px' }}>
+          <span>Home</span>
           <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="9 18 15 12 9 6"/></svg>
-          <span>SHOP</span>
+          <span>Shop</span>
           <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="9 18 15 12 9 6"/></svg>
-          <span style={{ color: '#fff' }}>DRAGON REBIRTH</span>
+          <span>Japanese Collection</span>
+          <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="9 18 15 12 9 6"/></svg>
+          <span style={{ fontWeight: '900' }}>Tokyo Dragon</span>
         </div>
 
         <ProductHero />
-
-        {/* Mobile Sticky Nav */}
+        
+        {/* Mobile Accordions (hidden on desktop) */}
         <div className="pd-mobile-only">
-          <MobileStickyNav />
+          <ProductAccordions />
         </div>
+      </div>
 
-        {/* Desktop Layout Wrapper */}
-        <div className="pd-desktop-only">
-          <div className="pd-split-section" style={{ height: 'auto', alignItems: 'stretch', gap: '20px', margin: '40px 0' }}>
-            <ProductHowTo />
-            <ProductTabs />
-          </div>
+      {/* Desktop Story (hidden on mobile) */}
+      <div className="pd-desktop-only">
+        <ProductStory />
+      </div>
 
-          <h2 className="pd-section-title">REAL PEOPLE. REAL VIBES.</h2>
+      <div className="pd-container">
+        <ProductHowTo />
+
+        <div style={{ marginTop: '80px' }}>
+          <h2 className="pd-section-title" style={{ fontSize: '18px', marginBottom: '10px' }}>REAL PEOPLE. REAL VIBES.</h2>
+          <div style={{ color: '#cc0000', fontSize: '10px', fontWeight: 'bold', marginBottom: '20px', textTransform: 'uppercase' }}>#tokyovibes</div>
           <ProductRealVibes />
-
-          <div className="pd-split-section" style={{ height: 'auto', alignItems: 'stretch', gap: '20px', margin: '40px 0' }}>
-            <ProductRelated />
-            <ProductReviews />
-          </div>
         </div>
 
-        {/* Mobile Layout Wrapper */}
-        <div className="pd-mobile-only">
-          <div id="details" style={{ marginTop: '30px' }}>
-            <h3 style={{ color: '#fff', fontSize: '14px', letterSpacing: '1px', marginBottom: '20px' }}>PRODUCT DETAILS</h3>
-            <ProductTabs isMobile={true} />
-            <ProductStory isMobile={true} />
-          </div>
-          
-          <div style={{ marginTop: '40px' }}>
-            <h3 style={{ color: '#fff', fontSize: '14px', letterSpacing: '1px', marginBottom: '20px' }}>GALLERY</h3>
-            <ProductRealVibes isMobile={true} />
-          </div>
-          
-          <div style={{ marginTop: '40px' }}>
-            <ProductRelated isMobile={true} />
-          </div>
-
-          <div style={{ marginTop: '40px' }} id="how">
-            <h3 style={{ color: '#fff', fontSize: '14px', letterSpacing: '1px', marginBottom: '20px', textTransform: 'uppercase' }}>Placement Preview</h3>
-            <ProductTryItOn isMobile={true} />
-          </div>
-
-          <div style={{ marginTop: '40px' }}>
-            <ProductHowTo isMobile={true} />
-          </div>
-
-          <div style={{ display: 'flex', justifyContent: 'space-between', padding: '20px 0', borderTop: '1px solid #333', marginTop: '30px' }}>
-            <div style={{ textAlign: 'center', flex: 1 }}>
-              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#fff" strokeWidth="1.5" style={{ marginBottom: '5px' }}><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              <div style={{ fontSize: '8px', fontWeight: 'bold', color: '#fff' }}>SAFE INGREDIENTS<br/><span style={{ color: '#888', fontWeight: 'normal' }}>Skin friendly & non-toxic</span></div>
-            </div>
-            <div style={{ textAlign: 'center', flex: 1, borderLeft: '1px solid #333', borderRight: '1px solid #333' }}>
-              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#fff" strokeWidth="1.5" style={{ marginBottom: '5px' }}><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              <div style={{ fontSize: '8px', fontWeight: 'bold', color: '#fff' }}>CRUELTY FREE<br/><span style={{ color: '#888', fontWeight: 'normal' }}>Not tested on animals</span></div>
-            </div>
-            <div style={{ textAlign: 'center', flex: 1 }}>
-              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#fff" strokeWidth="1.5" style={{ marginBottom: '5px' }}><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-              <div style={{ fontSize: '8px', fontWeight: 'bold', color: '#fff' }}>MADE IN INDIA<br/><span style={{ color: '#888', fontWeight: 'normal' }}>Proudly made for you</span></div>
-            </div>
-          </div>
-
-          <div style={{ marginTop: '40px' }} id="reviews">
-            <FrequentlyBoughtTogether />
-          </div>
+        <div style={{ marginTop: '60px' }}>
+          <h2 className="pd-section-title" style={{ fontSize: '18px', marginBottom: '30px', textAlign: 'left' }}>YOU MAY ALSO LIKE</h2>
+          <ProductRelated />
         </div>
-
+      </div>
+      
+      {/* Bottom Features Footer Strip */}
+      <div className="pd-features-strip-top pd-mobile-hide" style={{ flexWrap: 'wrap', gap: '20px' }}>
+        <div className="pd-feature">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <div style={{ lineHeight: '1.4' }}>FAST DELIVERY<br/><span style={{fontWeight:'normal'}}>2-4 Business Days</span></div>
+        </div>
+        <div className="pd-feature">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <div style={{ lineHeight: '1.4' }}>PREMIUM QUALITY<br/><span style={{fontWeight:'normal'}}>Imported Ink & Materials</span></div>
+        </div>
+        <div className="pd-feature">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <div style={{ lineHeight: '1.4' }}>SECURE PAYMENT<br/><span style={{fontWeight:'normal'}}>100% Safe & Secure</span></div>
+        </div>
+        <div className="pd-feature">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+          <div style={{ lineHeight: '1.4' }}>EASY RETURNS<br/><span style={{fontWeight:'normal'}}>Hassle Free Returns</span></div>
+        </div>
       </div>
     </main>
   );

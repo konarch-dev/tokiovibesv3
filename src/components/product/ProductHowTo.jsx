@@ -1,75 +1,82 @@
 import React from 'react';
+import '../../product.css';
 
-const ProductHowTo = ({ isMobile }) => {
-  const steps = [
-    { num: 1, title: 'CLEAN SKIN', desc: 'Make sure the area is clean and dry.', img: '/images/sc_dragon.png' },
-    { num: 2, title: 'REMOVE FILM', desc: 'Remove transparent film and place tattoo facedown.', img: '/images/sc_samurai.png' },
-    { num: 3, title: 'WET FOR 30 SECS', desc: 'Wet the paper with a sponge or cloth.', img: '/images/travel.jpg' },
-    { num: 4, title: 'REMOVE PAPER', desc: 'Gently slide off the paper backing.', img: '/images/sc_geisha.png' },
-    { num: 5, title: 'FLEX YOUR VIBE', desc: 'Let it dry & show off your new vibe.', img: '/images/men.png' }
-  ];
-
-  if (isMobile) {
-    return (
-      <div style={{ backgroundColor: '#000', padding: '0' }}>
-        <h3 style={{ color: '#fff', fontSize: '14px', letterSpacing: '1px', marginBottom: '20px', textTransform: 'uppercase' }}>How To Apply</h3>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-          {steps.map(step => (
-            <div key={step.num} style={{ display: 'flex', gap: '15px' }}>
-              <div style={{ position: 'relative', width: '60px', height: '60px', flexShrink: 0 }}>
-                <img src={step.img} alt={step.title} style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'grayscale(0.8)', borderRadius: '2px' }} />
-                <div style={{ position: 'absolute', top: 0, left: 0, backgroundColor: '#cc0000', color: '#fff', width: '16px', height: '16px', display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: '10px', fontWeight: 'bold' }}>
-                  {step.num}
-                </div>
-              </div>
-              <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                <div style={{ color: '#fff', fontSize: '12px', fontWeight: 'bold', marginBottom: '4px' }}>{step.title}</div>
-                <div style={{ color: '#888', fontSize: '10px', lineHeight: '1.4' }}>{step.desc}</div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    );
-  }
-
+const ProductHowTo = () => {
   return (
-    <div className="pd-howto-panel" style={{ flex: 2, backgroundColor: '#0a0a0a', border: '1px solid #222', padding: '30px', display: 'flex', flexDirection: 'column' }}>
+    <div className="pd-how-section">
       
-      {/* Header */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '30px' }}>
-        <div>
-          <h3 style={{ color: '#fff', fontSize: '18px', fontWeight: 'bold', margin: '0 0 5px 0', letterSpacing: '1px' }}>HOW TO APPLY</h3>
-          <p style={{ color: '#888', fontSize: '12px', margin: 0 }}>Quick & Easy Steps</p>
+      {/* Why You'll Love It Section */}
+      <div className="pd-why-love-it">
+        <div className="pd-desktop-only pd-why-image">
+           <img src="/images/dragon.jpg" alt="Why You'll Love It" />
         </div>
-        <a href="#guide" style={{ color: '#cc0000', fontSize: '12px', fontWeight: 'bold', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '5px' }}>
-          View Full Guide <span>→</span>
-        </a>
-      </div>
-
-      {/* Steps Row */}
-      <div style={{ display: 'flex', gap: '15px', width: '100%' }}>
-        {steps.map(step => (
-          <div key={step.num} style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
-            {/* Image Box */}
-            <div style={{ position: 'relative', width: '100%', aspectRatio: '1/1', border: '1px solid #333', borderRadius: '4px', overflow: 'hidden', marginBottom: '15px' }}>
-              <img src={step.img} alt={step.title} style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.7, filter: 'grayscale(0.8)' }} />
-              {/* Number Badge */}
-              <div style={{ position: 'absolute', top: 0, left: 0, backgroundColor: '#cc0000', color: '#fff', width: '24px', height: '24px', display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: '12px', fontWeight: 'bold', borderBottomRightRadius: '4px' }}>
-                {step.num}
+        <div className="pd-why-content">
+          <h3 className="pd-why-title">WHY YOU'LL LOVE IT</h3>
+          <div className="pd-why-grid">
+            {['Detailed &\nIntricate Design', 'Premium\nQuality Ink', 'Looks\nReal', 'Perfect for\nAny Occasion', 'Unisex\nDesign'].map((item, idx) => (
+              <div key={idx} className="pd-why-item">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1">
+                  <circle cx="12" cy="12" r="10"/><path d="M16 8l-8 8"/><path d="M8 8l8 8"/>
+                </svg>
+                <span>{item}</span>
               </div>
-            </div>
-            
-            {/* Text */}
-            <div style={{ color: '#fff', fontSize: '10px', fontWeight: 'bold', marginBottom: '8px' }}>
-              {step.title}
-            </div>
-            <div style={{ color: '#888', fontSize: '10px', lineHeight: '1.4' }}>
-              {step.desc}
-            </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
+      
+      {/* How To Apply Section */}
+      <div className="pd-how-to-apply">
+        <h3 className="pd-how-title">HOW TO APPLY</h3>
+        <div className="pd-how-title-line"></div>
+        
+        <div className="pd-how-steps">
+          {/* Step 1 */}
+          <div className="pd-how-step-item">
+            <div className="pd-step-num">1</div>
+            <div className="pd-step-icon">
+              <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" strokeWidth="1"><path d="M4 4h16v16H4z"/><path d="M4 4l16 16"/></svg>
+            </div>
+            <div className="pd-step-title">Peel</div>
+            <div className="pd-step-desc">Remove the clear film.</div>
+          </div>
+          
+          {/* Step 2 */}
+          <div className="pd-how-step-item">
+            <div className="pd-step-num">2</div>
+            <div className="pd-step-icon">
+              <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" strokeWidth="1"><path d="M12 22C6.5 22 2 17.5 2 12S6.5 2 12 2s10 4.5 10 10-4.5 10-10 10z"/><path d="M12 8v8"/><path d="M8 12h8"/></svg>
+            </div>
+            <div className="pd-step-title">Apply</div>
+            <div className="pd-step-desc">Place the tattoo on clean skin.</div>
+          </div>
+          
+          {/* Step 3 */}
+          <div className="pd-how-step-item">
+            <div className="pd-step-num">3</div>
+            <div className="pd-step-icon">
+               <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" strokeWidth="1"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <div className="pd-step-title">Wet</div>
+            <div className="pd-step-desc">Wet the back of the tattoo.</div>
+          </div>
+          
+          {/* Step 4 */}
+          <div className="pd-how-step-item">
+            <div className="pd-step-num">4</div>
+            <div className="pd-step-icon">
+              <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" strokeWidth="1"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            </div>
+            <div className="pd-step-title">Reveal</div>
+            <div className="pd-step-desc">Peel off after 30 seconds.</div>
+          </div>
+        </div>
+        
+        <div className="pd-pro-tip">
+          <strong>Pro Tip:</strong> Avoid touching the tattoo & let it set for a few hours for best results.
+        </div>
+      </div>
+      
     </div>
   );
 };
