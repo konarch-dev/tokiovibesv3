@@ -1,0 +1,234 @@
+/* ================= ABOUT US PAGE STYLES ================= */
+.about-page {
+  background-color: #050505;
+  color: #fff;
+  min-height: 100vh;
+  padding-bottom: 50px;
+}
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* --- Hero Section --- */
+.about-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 0;
+  gap: 50px;
+}
+
+/* Left Content */
+.about-hero-text {
+  flex: 1;
+}
+.about-subtitle {
+  color: #ff2a2a;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  display: inline-block;
+  border-bottom: 2px solid #ff2a2a;
+  padding-bottom: 5px;
+}
+.about-title {
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+.about-jap-subtitle {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+}
+.about-desc {
+  font-size: 14px;
+  color: #ccc;
+  line-height: 1.8;
+  margin-bottom: 40px;
+  max-width: 450px;
+}
+.about-desc p {
+  margin-bottom: 15px;
+}
+.about-btn {
+  background-color: #ff2a2a;
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  font-size: 14px;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: opacity 0.2s;
+}
+.about-btn:hover {
+  opacity: 0.8;
+}
+
+/* Right Collage */
+.about-hero-images {
+  flex: 1;
+  position: relative;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.about-img-container {
+  position: absolute;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+.about-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img-top-left {
+  width: 200px;
+  height: 250px;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.img-center {
+  width: 250px;
+  height: 350px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-30%, -50%);
+  z-index: 2;
+}
+.img-bottom-left {
+  width: 180px;
+  height: 180px;
+  bottom: 20px;
+  left: 20px;
+  z-index: 3;
+}
+
+/* Glassmorphism Card */
+.about-card {
+  position: absolute;
+  bottom: 0;
+  right: -20px;
+  background: rgba(20, 20, 20, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 8px;
+  z-index: 4;
+}
+.ac-title {
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 1.4;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+.ac-title-line {
+  width: 40px;
+  height: 2px;
+  background-color: #ff2a2a;
+  margin-bottom: 20px;
+}
+.ac-jap-text {
+  font-size: 12px;
+  color: #aaa;
+  letter-spacing: 2px;
+}
+
+/* --- Values Section --- */
+.about-values-section {
+  padding: 60px 0;
+  border-top: 1px solid #222;
+}
+.values-header {
+  margin-bottom: 50px;
+}
+.values-subtitle {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: inline-block;
+  border-bottom: 2px solid #ff2a2a;
+  padding-bottom: 5px;
+}
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+.value-item {
+  display: flex;
+  flex-direction: column;
+}
+.value-icon {
+  margin-bottom: 20px;
+  color: #ff2a2a;
+}
+.value-icon svg {
+  width: 32px;
+  height: 32px;
+}
+.value-title {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.value-desc {
+  font-size: 12px;
+  color: #999;
+  line-height: 1.6;
+}
+
+/* --- Responsive --- */
+@media (max-width: 992px) {
+  .about-hero {
+    flex-direction: column;
+    padding: 40px 0;
+  }
+  .about-hero-images {
+    width: 100%;
+    margin-top: 40px;
+  }
+  .about-title {
+    font-size: 36px;
+  }
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .about-card {
+    right: 10px;
+    bottom: -20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .img-center {
+    transform: translate(-50%, -50%);
+  }
+  .img-top-left, .img-bottom-left {
+    display: none; /* Simplify on very small screens */
+  }
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+}

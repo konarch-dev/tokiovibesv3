@@ -33,8 +33,8 @@ const Header = () => {
               </Link>
               <Link to="/shop">Shop</Link>
               <Link to="/shop">Products</Link>
-              <a href="#about">About Us</a>
-              <a href="#contact">Contact Us</a>
+              <Link to="/about">About Us</Link>
+              <Link to="/contact">Contact Us</Link>
             </nav>
             <button 
               className="mobile-only mobile-menu-btn" 
@@ -101,8 +101,8 @@ const Header = () => {
           </Link>
           <a href="#new-arrivals" onClick={() => setIsMobileMenuOpen(false)}>New Arrivals</a>
           <Link to="/shop" onClick={() => setIsMobileMenuOpen(false)}>Shop</Link>
-          <a href="#about" onClick={() => setIsMobileMenuOpen(false)}>About Us</a>
-          <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</a>
+          <Link to="/about" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link>
+          <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</Link>
         </nav>
         <div className="sidebar-auth-links">
           <a href="#login" className="sidebar-btn" onClick={() => setIsMobileMenuOpen(false)}>Login</a>

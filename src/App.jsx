@@ -8,6 +8,8 @@ import Home from './pages/Home';
 import Shop from './pages/Shop';
 import ProductDetail from './pages/ProductDetail';
 import MyStudio from './pages/MyStudio';
+import AboutUs from './pages/AboutUs';
+import ContactUs from './pages/ContactUs';
 import './index.css';
 
 const ScrollToTopOnMount = () => {
@@ -29,6 +31,8 @@ function App() {
           <Route path="/shop" element={<Shop />} />
           <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/studio" element={<MyStudio />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/contact" element={<ContactUs />} />
         </Routes>
         <Footer />
         <ScrollToTop />
