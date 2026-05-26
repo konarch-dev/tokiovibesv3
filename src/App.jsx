@@ -10,6 +10,9 @@ import ProductDetail from './pages/ProductDetail';
 import MyStudio from './pages/MyStudio';
 import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
+import Cart from './pages/Cart';
+import Checkout from './pages/Checkout';
+import { CartProvider } from './context/CartContext';
 import './index.css';
 
 const ScrollToTopOnMount = () => {
@@ -22,10 +25,11 @@ const ScrollToTopOnMount = () => {
 
 function App() {
   return (
-    <Router>
-      <ScrollToTopOnMount />
-      <div className="App">
-        <Header />
+    <CartProvider>
+      <Router>
+        <ScrollToTopOnMount />
+        <div className="App">
+          <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<Shop />} />
@@ -33,12 +37,15 @@ function App() {
           <Route path="/studio" element={<MyStudio />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contact" element={<ContactUs />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
         <Footer />
         <ScrollToTop />
         <MobileBottomNav />
       </div>
-    </Router>
+      </Router>
+    </CartProvider>
   );
 }
 

@@ -1,9 +1,31 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useCart } from '../../context/CartContext';
 
 const ProductHero = () => {
   const [size, setSize] = useState('Medium (15x9cm)');
   const [qty, setQty] = useState(1);
   const [activeImg, setActiveImg] = useState('/images/dragon.jpg');
+  const { addToCart } = useCart();
+  const navigate = useNavigate();
+
+  const handleAddToCart = () => {
+    addToCart({
+      id: 'tokyo-dragon-001',
+      name: 'Tokyo Dragon',
+      price: 399,
+      image: '/images/dragon.jpg',
+      size: size,
+      quantity: qty,
+      isLimitedDrop: false
+    });
+    // Optional: show a toast or feedback
+  };
+
+  const handleBuyNow = () => {
+    handleAddToCart();
+    navigate('/checkout');
+  };
 
   const gallery = [
     '/images/dragon.jpg',
@@ -150,11 +172,11 @@ const ProductHero = () => {
         </div>
         
         <div className="pd-action-btns" style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '20px' }}>
-          <button className="pd-add-to-cart" style={{ border: 'none', borderRadius: '4px', padding: '15px', fontSize: '12px', fontWeight: 'bold', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '10px', textTransform: 'uppercase' }}>
+          <button className="pd-add-to-cart" onClick={handleAddToCart} style={{ border: 'none', borderRadius: '4px', padding: '15px', fontSize: '12px', fontWeight: 'bold', display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '10px', textTransform: 'uppercase', cursor: 'pointer' }}>
             ADD TO CART
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
           </button>
-          <button className="pd-buy-now" style={{ borderRadius: '4px', padding: '15px', fontSize: '12px', fontWeight: 'bold', textTransform: 'uppercase' }}>
+          <button className="pd-buy-now" onClick={handleBuyNow} style={{ borderRadius: '4px', padding: '15px', fontSize: '12px', fontWeight: 'bold', textTransform: 'uppercase', cursor: 'pointer' }}>
             BUY IT NOW
           </button>
         </div>

@@ -1,0 +1,401 @@
+.checkout-page {
+  padding: 40px 0;
+  background-color: #f8f8f8;
+  min-height: 80vh;
+  color: #000;
+}
+
+.checkout-header {
+  margin-bottom: 30px;
+}
+
+.checkout-header h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 3rem;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.checkout-content {
+  display: flex;
+  gap: 40px;
+}
+
+.checkout-left {
+  flex: 1;
+}
+
+.checkout-right {
+  width: 350px;
+}
+
+/* Forms */
+.form-section {
+  background: transparent;
+  margin-bottom: 30px;
+}
+
+.form-section h2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.8rem;
+  color: #666;
+  position: absolute;
+  top: 8px;
+  left: 15px;
+  z-index: 1;
+}
+
+.form-group input,
+.form-group select,
+.form-section textarea {
+  width: 100%;
+  padding: 25px 15px 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.form-section textarea {
+  padding: 15px;
+  height: 100px;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #000;
+}
+
+.input-with-icon {
+  position: relative;
+}
+
+.success-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+}
+
+.form-row .half {
+  flex: 1;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.checkbox-group input {
+  width: 18px;
+  height: 18px;
+  accent-color: #000;
+}
+
+.checkbox-group label {
+  font-size: 0.9rem;
+}
+
+/* Shipping Methods */
+.shipping-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.shipping-option {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.shipping-option.selected {
+  border-color: #ff3b30;
+  background: #fffafa;
+}
+
+.radio-btn {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin-right: 15px;
+}
+
+.radio-btn input {
+  opacity: 0;
+  position: absolute;
+}
+
+.radio-custom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ddd;
+  border-radius: 50%;
+}
+
+.radio-btn input:checked ~ .radio-custom {
+  border-color: #ff3b30;
+}
+
+.radio-btn input:checked ~ .radio-custom::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 8px;
+  height: 8px;
+  background: #ff3b30;
+  border-radius: 50%;
+}
+
+.shipping-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.shipping-name {
+  font-weight: bold;
+}
+
+.shipping-time {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.shipping-price {
+  font-weight: bold;
+}
+
+.shipping-price.free {
+  color: #ff3b30;
+}
+
+/* Order Summary Box */
+.checkout-right .order-summary-box {
+  background: #111;
+  color: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  position: sticky;
+  top: 20px;
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #333;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.order-header h3 {
+  font-family: 'Oswald', sans-serif;
+  margin: 0;
+  color: #fff;
+}
+
+.edit-cart-link {
+  color: #ff3b30;
+  text-decoration: underline;
+  font-size: 0.9rem;
+}
+
+.items-count {
+  font-size: 0.8rem;
+  color: #888;
+  margin-bottom: 15px;
+}
+
+.checkout-items {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 20px;
+}
+
+.checkout-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.checkout-item img {
+  width: 60px;
+  height: 60px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.checkout-item-details {
+  flex: 1;
+}
+
+.checkout-item-details h4 {
+  margin: 0 0 5px 0;
+  font-size: 0.9rem;
+}
+
+.checkout-item-details p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.checkout-item-price {
+  font-weight: bold;
+}
+
+.urgency-banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid rgba(255, 59, 48, 0.3);
+  padding: 15px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.urgency-banner svg {
+  color: #fff;
+}
+
+.urgency-banner strong {
+  font-size: 0.85rem;
+  display: block;
+}
+
+.urgency-banner p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.urgency-banner span {
+  color: #ff3b30;
+  font-weight: bold;
+}
+
+.secure-payment-note {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.75rem !important;
+  color: #aaa !important;
+  margin-top: 15px !important;
+}
+
+.proceed-btn {
+  width: 100%;
+  background: #ff3b30;
+  color: #fff;
+  border: none;
+  padding: 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 20px;
+}
+
+.proceed-btn:hover {
+  background: #d63026;
+}
+
+/* Bottom Features Banner */
+.checkout-features-banner {
+  background: #fff;
+  padding: 30px 0;
+  margin-top: 40px;
+  border-top: 1px solid #ddd;
+}
+
+.banner-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.banner-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.banner-item strong {
+  font-size: 0.9rem;
+  display: block;
+}
+
+.banner-item p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .checkout-content {
+    flex-direction: column;
+    flex-direction: column-reverse; /* Usually summary on top on mobile, but design shows form. I'll stick to column */
+  }
+  
+  .checkout-right {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .banner-container {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .banner-item {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
